@@ -12,3 +12,5 @@ signing.properties
 *.zip
 *.pepk
 *.json
+
+API_KEYS

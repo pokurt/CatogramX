@@ -25,8 +25,8 @@ public class BuildVars {
     public static String BUILD_VERSION_STRING = "2.0.0";
     public static int TELEGRAM_BUILD_VERSION = 2636;
     public static String TELEGRAM_VERSION_STRING = "8.7.4";
-    public static int APP_ID = 10029733;
-    public static String APP_HASH = "d0d81009d46e774f78c0e0e622f5fa21";
+    public static int APP_ID = BuildConfig.APP_ID; //obtain your own APP_ID at https://core.telegram.org/api/obtaining_api_id
+    public static String APP_HASH = BuildConfig.APP_HASH; //obtain your own APP_HASH at https://core.telegram.org/api/obtaining_api_id
 
     public static String SMS_HASH = isStandaloneApp() ? "w0lkcmTZkKh" : (DEBUG_VERSION ? "O2P2z+/jBpJ" : "oLeq9AcOZkT");
     public static String PLAYSTORE_APP_URL = "https://play.google.com/store/apps/details?id=it.owlgram.android";
