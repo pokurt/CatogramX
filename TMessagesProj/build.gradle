@@ -43,8 +43,7 @@ dependencies {
     compileOnly 'org.checkerframework:checker-compat-qual:2.5.5'
 
     implementation 'com.google.firebase:firebase-messaging:23.0.5'
-    implementation 'com.google.android.gms:play-services-maps:18.0.2'
-    implementation 'com.google.android.gms:play-services-location:19.0.1'
+    implementation 'org.osmdroid:osmdroid-android:6.1.10'
     //noinspection GradleDependency
     implementation 'com.googlecode.mp4parser:isoparser:1.0.6' // NOT YET SUPPORTED BY TELEGRAM
     //noinspection GradleDependency

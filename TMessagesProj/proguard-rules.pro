@@ -116,6 +116,11 @@
 -dontwarn org.jetbrains.annotations.NotNull
 -dontwarn org.jetbrains.annotations.Nullable
 
+# https://github.com/osmdroid/osmdroid/issues/633
+-dontwarn org.osmdroid.tileprovider.modules.NetworkAvailabliltyCheck
+# Osmdroid
+-dontwarn org.osmdroid.**
+
 -repackageclasses
 -allowaccessmodification
 -overloadaggressively
