@@ -817,7 +817,7 @@ public class  MessagesController extends BaseController implements NotificationC
         preloadFeaturedStickers = mainPreferences.getBoolean("preloadFeaturedStickers", false);
         youtubePipType = mainPreferences.getString("youtubePipType", "disabled");
         keepAliveService = mainPreferences.getBoolean("keepAliveService", !ApplicationLoader.hasPlayServices);
-        backgroundConnection = mainPreferences.getBoolean("keepAliveService", !ApplicationLoader.hasPlayServices);
+        backgroundConnection = mainPreferences.getBoolean("backgroundConnection", !ApplicationLoader.hasPlayServices);
         promoDialogId = mainPreferences.getLong("proxy_dialog", 0);
         nextPromoInfoCheckTime = mainPreferences.getInt("nextPromoInfoCheckTime", 0);
         promoDialogType = mainPreferences.getInt("promo_dialog_type", 0);
