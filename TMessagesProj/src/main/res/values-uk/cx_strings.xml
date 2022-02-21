@@ -64,4 +64,9 @@
     <string name="CX_DBSettingsPin">Налаштування ПІН-коду</string>
     <string name="CX_EnableSAF">Примусовий доступ до сховища</string>
     <string name="CX_EnableMLKIT">Увімкнути виявлення мови ШІ на пристрої</string>
+    <string name="CX_DisableParseEntities">Вимкнути форматування символами</string>
+    <string name="CX_ShowProfile">Показувати профіль</string>
+    <string name="CX_Accessibility">Доступність</string>
+    <string name="CX_ShowProfileBtn">Показати кнопку профілю в контекстному меню</string>
+    <string name="CX_DisableParseEntities_Desc">Відключає форматування при використанні певних символів (наприклад: жирний, курсив, перекреслений тощо)</string>
 </resources>
