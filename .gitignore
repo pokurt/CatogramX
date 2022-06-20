@@ -11,7 +11,7 @@ signing.properties
 *.jsk
 *.zip
 *.pepk
-*.json
+#*.json
 
 API_KEYS
 google-services.json
