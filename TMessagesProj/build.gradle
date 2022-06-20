@@ -143,7 +143,7 @@ android {
             }
             jniDebuggable true
             applicationIdSuffix ".beta"
-            resValue "string", "BuildAppName", "@string/AppNameBeta"
+            resValue "string", "BuildAppName", "@string/catox_AppNameBeta"
         }
 
         release {
@@ -154,7 +154,7 @@ android {
             }
             proguardFiles 'proguard-rules.pro'
             ndk.debugSymbolLevel 'FULL'
-            resValue "string", "BuildAppName", "@string/AppName"
+            resValue "string", "BuildAppName", "@string/catox_AppName"
         }
     }
 

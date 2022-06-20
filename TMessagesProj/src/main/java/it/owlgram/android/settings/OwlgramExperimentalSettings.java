@@ -120,7 +120,7 @@ public class OwlgramExperimentalSettings extends BaseFragment {
                     TextCheckCell textCheckCell = (TextCheckCell) view;
                     if (IconsHelper.isSelectedMonet()) {
                         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-                        builder.setTitle(LocaleController.getString("AppName", R.string.AppName));
+                        builder.setTitle(LocaleController.getString("catox_AppName", R.string.catox_AppName));
                         builder.setMessage(LocaleController.getString("DisableExperimentalAlert", R.string.DisableExperimentalAlert));
                         builder.setPositiveButton(LocaleController.getString("AutoDeleteConfirm", R.string.AutoDeleteConfirm), (dialogInterface, i) -> {
                             IconsHelper.switchToMonet();
