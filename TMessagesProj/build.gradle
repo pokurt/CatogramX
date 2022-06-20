@@ -4,7 +4,6 @@ import java.nio.file.Paths
 plugins {
     id 'com.android.application'
     id 'com.google.gms.google-services'
-    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
 configurations.all {
@@ -120,40 +119,29 @@ android {
         coreLibraryDesugaringEnabled true
     }
 
-    Properties signingProperties = new Properties()
-    if (project.rootProject.file('signing.properties').exists()) {
-        signingProperties.load(project.rootProject.file('signing.properties').newDataInputStream())
-    }
-
     signingConfigs {
-        if (signingProperties.getProperty("storeFile") != null) {
-            sign {
-                storeFile file(signingProperties.getProperty("storeFile"))
-                storePassword signingProperties.getProperty("storePassword")
-                keyAlias signingProperties.getProperty("keyAlias")
-                keyPassword signingProperties.getProperty("keyPassword")
-            }
+        release {
+            storeFile file(RELEASE_STORE_FILE)
+            storePassword RELEASE_STORE_PASSWORD
+            keyAlias RELEASE_KEY_ALIAS
+            keyPassword RELEASE_KEY_PASSWORD
         }
     }
 
     buildTypes {
         debug {
-            if (signingProperties.getProperty("storeFile") != null) {
-                signingConfig signingConfigs.sign
-            }
+            signingConfig signingConfigs.release
             jniDebuggable true
+            ndk.debugSymbolLevel 'FULL'
             applicationIdSuffix ".beta"
             resValue "string", "BuildAppName", "@string/catox_AppNameBeta"
         }
 
         release {
+            signingConfig signingConfigs.release
             minifyEnabled true
             shrinkResources true
-            if (signingProperties.getProperty("storeFile") != null) {
-                signingConfig signingConfigs.sign
-            }
             proguardFiles 'proguard-rules.pro'
-            ndk.debugSymbolLevel 'FULL'
             resValue "string", "BuildAppName", "@string/catox_AppName"
         }
     }
@@ -164,7 +152,7 @@ android {
         variant.outputs.all { output ->
             def abi = output.getFilter('ABI')
             if (abi == null) abi = 'universal'
-            outputFileName = "OwlGram-${defaultConfig.versionName}-${defaultConfig.versionCode}-${abi}.apk"
+            outputFileName = "CatogramX-${defaultConfig.versionName}-${defaultConfig.versionCode}-${abi}.apk"
             def abiVersionCode = project.ext.abiCodes.get(abi)
             output.versionCodeOverride = defaultConfig.versionCode * 10 + abiVersionCode
         }
@@ -208,7 +196,7 @@ def patchBundleReleaseManifest = task('patchBundleReleaseManifest').doLast {
     def manifest = Paths.get(project.buildDir.path, 'intermediates',
             'bundle_manifest', 'release', 'AndroidManifest.xml')
     def manifestContent = manifest.getText()
-    manifestContent = manifestContent.replace("owlgram.apks", "owlgram.bundle")
+    manifestContent = manifestContent.replace("catox.apks", "catox.bundle")
     Files.write(manifest, manifestContent.getBytes())
 }
 
