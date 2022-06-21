@@ -5,11 +5,6 @@ import android.content.pm.PackageInfo;
 import androidx.annotation.NonNull;
 import androidx.core.util.Pair;
 
-import com.google.android.play.core.appupdate.AppUpdateInfo;
-import com.google.android.play.core.appupdate.AppUpdateManager;
-import com.google.android.play.core.appupdate.AppUpdateManagerFactory;
-import com.google.android.play.core.tasks.Task;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
@@ -65,6 +60,7 @@ public class UpdateManager {
 
     public static void checkUpdates(UpdateCallback updateCallback) {
         if (StoreUtils.isFromPlayStore()) {
+            /*
             AppUpdateManager appUpdateManager = AppUpdateManagerFactory.create(ApplicationLoader.applicationContext);
             Task<AppUpdateInfo> appUpdateInfoTask = appUpdateManager.getAppUpdateInfo();
             appUpdateInfoTask.addOnSuccessListener(appUpdateInfo -> {
@@ -76,6 +72,7 @@ public class UpdateManager {
                 }
             });
             appUpdateInfoTask.addOnFailureListener(updateCallback::onError);
+            */
         } else {
             checkInternal(updateCallback, -1);
         }
