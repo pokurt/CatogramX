@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.os.PowerManager;
+import android.widget.Toast;
 
 import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;

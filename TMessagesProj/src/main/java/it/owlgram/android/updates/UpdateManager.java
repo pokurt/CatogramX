@@ -47,9 +47,9 @@ public class UpdateManager {
             @Override
             public void run() {
                 try {
-                    String url = String.format("https://app.owlgram.org/get_changelogs?lang=%s&version=%s", locale.getLanguage(), BuildVars.BUILD_VERSION);
+                    String url = "https://api.github.com/repos/CatogramX/CatogramX/releases/latest";
                     JSONObject obj = new JSONObject(new StandardHTTPRequest(url).request());
-                    String changelog_text = obj.getString("changelogs");
+                    String changelog_text = obj.getString("body");
                     if (!changelog_text.equals("null")) {
                         AndroidUtilities.runOnUIThread(() -> changelogCallback.onSuccess(HTMLKeeper.htmlToEntities(changelog_text, null, true)));
                     }
@@ -79,8 +79,7 @@ public class UpdateManager {
     }
 
     private static void checkInternal(UpdateCallback updateCallback, int psVersionCode) {
-        Locale locale = LocaleController.getInstance().getCurrentLocale();
-        boolean betaMode = OwlConfig.betaUpdates && !StoreUtils.isDownloadedFromAnyStore();
+        //boolean betaMode = OwlConfig.betaUpdates && !StoreUtils.isDownloadedFromAnyStore();
         new Thread() {
             @Override
             public void run() {
@@ -110,20 +109,18 @@ public class UpdateManager {
                             abi = "universal";
                             break;
                     }
-                    String url = String.format(locale,"https://app.owlgram.org/version?lang=%s&beta=%s&abi=%s", locale.getLanguage(), betaMode,  URLEncoder.encode(abi, "utf-8"));
+                    String url = "https://api.github.com/repos/CatogramX/CatogramX/releases/latest";
                     JSONObject obj = new JSONObject(new StandardHTTPRequest(url).request());
-                    String update_status = obj.getString("status");
-                    if (update_status.equals("no_updates")) {
-                        AndroidUtilities.runOnUIThread(() -> updateCallback.onSuccess(new UpdateNotAvailable()));
+                    int vc = Integer.parseInt(obj.getString("tag_name").substring(3));
+                    int remoteVersion = BuildVars.IGNORE_VERSION_CHECK ? Integer.MAX_VALUE : (psVersionCode <= 0 ? vc /* cx_123 -> 123 */ : psVersionCode);
+                    if (remoteVersion > code) {
+                        JSONObject asset = obj.getJSONArray("assets").getJSONObject(0 /*TODO*/);
+                        UpdateAvailable updateAvailable = new UpdateAvailable(obj.getString("name"), obj.getString("body"), "Meow" /*TODO*/, "", asset.getString("url"), vc, asset.getLong("size"));
+                        AndroidUtilities.runOnUIThread(() -> updateCallback.onSuccess(updateAvailable));
                     } else {
-                        int remoteVersion = BuildVars.IGNORE_VERSION_CHECK ? Integer.MAX_VALUE:(psVersionCode <= 0 ? obj.getInt("version"):psVersionCode);
-                        if (remoteVersion > code) {
-                            UpdateAvailable updateAvailable = loadUpdate(obj);
-                            AndroidUtilities.runOnUIThread(() -> updateCallback.onSuccess(updateAvailable));
-                        } else {
-                            AndroidUtilities.runOnUIThread(() -> updateCallback.onSuccess(new UpdateNotAvailable()));
-                        }
+                        AndroidUtilities.runOnUIThread(() -> updateCallback.onSuccess(new UpdateNotAvailable()));
                     }
+
                 } catch (Exception e) {
                     AndroidUtilities.runOnUIThread(() -> updateCallback.onError(e));
                 }

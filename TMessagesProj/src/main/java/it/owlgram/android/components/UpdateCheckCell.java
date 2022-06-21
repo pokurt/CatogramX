@@ -103,7 +103,7 @@ public class UpdateCheckCell extends RelativeLayout {
     public void setCheckTime() {
         long date = OwlConfig.lastUpdateCheck;
         if (date != 0) {
-            titleTextView.setText(LocaleController.getString("NoUpdateAvailable", R.string.NoUpdateAvailable));
+            titleTextView.setText(LocaleController.getString("NoUpdateAvailableCX", R.string.NoUpdateAvailableCX));
         } else {
             titleTextView.setText(LocaleController.getString("NeverChecked", R.string.NeverChecked));
         }

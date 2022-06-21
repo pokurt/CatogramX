@@ -1,4 +1,20 @@
 <resources>
-  <string name="catox_AppName">Catogram X</string>
-  <string name="catox_AppNameBeta">CatoX Beta</string>
+	<string name="catox_AppName">Catogram X</string>
+	<string name="catox_AppNameBeta">CatoX Beta</string>
+	<string name="APKsChannelCX">Try out betas</string>
+	<string name="NoUpdateAvailableCX">Catogram X is up to date</string>
+	<string name="CXVersion">Catogram X %1$s\nBased on Telegram %2$s</string>
+	<string name="AppLinkNotVerifiedMessageCX">For Android 12 and newer, you need to manually add link to verified links in order to open t.me links in Catogram X.</string>
+	<string name="AppCrashedDescCX">Catogram X has stopped working. Please, send logs to the developers so that they can fix this bug as soon as possible.</string>
+	<string name="ChannelUsernameCX">catoxnews</string>
+	<string name="GroupUsernameCX">catoxchat</string>
+	<string name="TranslateOwlCX">Translate Catogram X</string>
+	<string name="TranslateOwlDescCX">Help us translate Catogram X into your language</string>
+	<string name="UpdateToImportCX">This backup is not supported by your version of Catogram X. Update the app to import it.</string>
+	<string name="ResetSettingsAlertCX">Are you sure you want to reset Catogram X settings?</string>
+	<string name="UpdateOwlGramCX">Update Catogram X</string>
+	<string name="InstallationBlockedCX">The installation was blocked by your device. Please report this issue to Catogram X support.</string>
+	<string name="InstallationFailureCX">The APK file is corrupted. Please report this issue to Catogram X support.</string>
+	<string name="UnknownInstallationErrorCX">Your device raised an unknown error. Please report this issue to Catogram X support.</string>
+	<string name="OwlSettingCX">Catogram X Settings</string>
 </resources>

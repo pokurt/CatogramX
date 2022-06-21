@@ -99,15 +99,15 @@ public class ApkInstaller {
         switch (status) {
             case PackageInstaller.STATUS_FAILURE_BLOCKED:
             case PackageInstaller.STATUS_FAILURE:
-                return LocaleController.getString("InstallationBlocked", R.string.InstallationBlocked);
+                return LocaleController.getString("InstallationBlockedCX", R.string.InstallationBlockedCX);
             case PackageInstaller.STATUS_FAILURE_INVALID:
             case PackageInstaller.STATUS_FAILURE_INCOMPATIBLE:
             case PackageInstaller.STATUS_FAILURE_CONFLICT:
-                return LocaleController.getString("InstallationFailure", R.string.InstallationFailure);
+                return LocaleController.getString("InstallationFailureCX", R.string.InstallationFailureCX);
             case PackageInstaller.STATUS_FAILURE_STORAGE:
                 return LocaleController.getString("NoMoreSpace", R.string.NoMoreSpace);
             default:
-                return LocaleController.getString("UnknownInstallationError", R.string.UnknownInstallationError);
+                return LocaleController.getString("UnknownInstallationErrorCX", R.string.UnknownInstallationErrorCX);
         }
     }
 

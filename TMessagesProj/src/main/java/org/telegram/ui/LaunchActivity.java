@@ -4201,7 +4201,7 @@ public class LaunchActivity extends BasePermissionsActivity implements ActionBar
                             if(updateAvailable.version > UpdateManager.currentVersion()) {
                                 createUpdateUI();
                                 updateLayoutIcon.setIcon(MediaActionDrawable.ICON_DOWNLOAD, true, true);
-                                updateTextView.setText(LocaleController.getString("UpdateOwlGram", R.string.UpdateOwlGram));
+                                updateTextView.setText(LocaleController.getString("UpdateOwlGramCX", R.string.UpdateOwlGramCX));
                                 updateSizeTextView.setTag(null);
                                 updateSizeTextView.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(180).start();
                                 updateSizeTextView.setText(AndroidUtilities.formatFileSize(updateAvailable.file_size));
@@ -4262,7 +4262,7 @@ public class LaunchActivity extends BasePermissionsActivity implements ActionBar
                             }
                         } else {
                             if (updateResult instanceof UpdateManager.UpdateNotAvailable && force) {
-                                NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.showBulletin, Bulletin.TYPE_ERROR, LocaleController.formatString("NoUpdateAvailable", R.string.NoUpdateAvailable));
+                                NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.showBulletin, Bulletin.TYPE_ERROR, LocaleController.formatString("NoUpdateAvailableCX", R.string.NoUpdateAvailableCX));
                             }
                             OwlConfig.saveUpdateStatus(0);
                         }

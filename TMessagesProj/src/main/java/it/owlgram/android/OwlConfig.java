@@ -101,7 +101,7 @@ public class OwlConfig extends SettingsManager {
     public static int oldDownloadedVersion = 0;
     public static int blurIntensity = 0;
     public static int eventType = 0;
-    public static int buttonStyleType = 0;
+    public static int buttonStyleType = 5;
     public static int translatorStyle = 0;
     public static int cameraType;
     public static int cameraXFps;
@@ -186,7 +186,7 @@ public class OwlConfig extends SettingsManager {
             drawerItems = preferences.getString("drawerItems", "[]");
             oldDownloadedVersion = preferences.getInt("oldDownloadedVersion", 0);
             eventType = preferences.getInt("eventType", 0);
-            buttonStyleType = preferences.getInt("buttonStyleType", 0);
+            buttonStyleType = preferences.getInt("buttonStyleType", 5);
             tabMode = preferences.getInt("tabMode", 1);
             translatorStyle = preferences.getInt("translatorStyle", BaseTranslator.INLINE_STYLE);
             blurIntensity = preferences.getInt("blurIntensity", 75);
@@ -210,7 +210,7 @@ public class OwlConfig extends SettingsManager {
             confirmStickersGIFs = preferences.getBoolean("confirmStickersGIFs", false);
             showIDAndDC = preferences.getBoolean("showIDAndDC", true);
             doNotTranslateLanguages = preferences.getString("doNotTranslateLanguages", "[\"app\"]");
-            dcStyleType = preferences.getInt("dcStyleType", 0);
+            dcStyleType = preferences.getInt("dcStyleType", 1);
             idType = preferences.getInt("idType", 0);
             searchIconInActionBar = preferences.getBoolean("searchIconInActionBar", false);
             autoTranslate = preferences.getBoolean("autoTranslate", false);

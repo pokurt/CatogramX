@@ -57,7 +57,7 @@ public class CrashReportBottomSheet extends BottomSheet {
         description.setGravity(Gravity.CENTER_HORIZONTAL);
         description.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 15);
         description.setTextColor(Theme.getColor(Theme.key_dialogTextGray3));
-        description.setText(LocaleController.getString("AppCrashedDesc", R.string.AppCrashedDesc));
+        description.setText(LocaleController.getString("AppCrashedDescCX", R.string.AppCrashedDescCX));
         linearLayout.addView(description, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT, 0, 21, 15, 21, 16));
 
         TextView buttonTextView = new TextView(activity);

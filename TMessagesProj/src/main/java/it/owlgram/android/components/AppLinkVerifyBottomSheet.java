@@ -115,7 +115,7 @@ public class AppLinkVerifyBottomSheet extends BottomSheet {
         description.setGravity(Gravity.CENTER);
         description.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 15);
         description.setTextColor(Theme.getColor(Theme.key_dialogTextGray3));
-        description.setText(AndroidUtilities.replaceTags(LocaleController.getString("AppLinkNotVerifiedMessage", R.string.AppLinkNotVerifiedMessage)));
+        description.setText(AndroidUtilities.replaceTags(LocaleController.getString("AppLinkNotVerifiedMessageCX", R.string.AppLinkNotVerifiedMessageCX)));
         linearLayout.addView(description, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT, 0, 21, 15, 21, 16));
 
         TextView buttonTextView = new TextView(context);

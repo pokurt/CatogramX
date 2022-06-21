@@ -1501,7 +1501,7 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
                 if (statusConf == OwlConfig.VALID_CONFIGURATION) {
                     new ImportSettingsDialog(ChannelAdminLogActivity.this, selectedObject).checkCanShowDialog();
                 } else {
-                    BulletinFactory.of(ChannelAdminLogActivity.this).createSimpleBulletin(R.raw.gigagroup_convert, LocaleController.getString("UpdateToImport", R.string.UpdateToImport), true).show();
+                    BulletinFactory.of(ChannelAdminLogActivity.this).createSimpleBulletin(R.raw.gigagroup_convert, LocaleController.getString("UpdateToImportCX", R.string.UpdateToImportCX), true).show();
                 }
                 break;
             }
@@ -2338,7 +2338,7 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
                                 if (statusConf == OwlConfig.VALID_CONFIGURATION) {
                                     new ImportSettingsDialog(ChannelAdminLogActivity.this, message).checkCanShowDialog();
                                 } else {
-                                    BulletinFactory.of(ChannelAdminLogActivity.this).createSimpleBulletin(R.raw.gigagroup_convert, LocaleController.getString("UpdateToImport", R.string.UpdateToImport), true).show();
+                                    BulletinFactory.of(ChannelAdminLogActivity.this).createSimpleBulletin(R.raw.gigagroup_convert, LocaleController.getString("UpdateToImportCX", R.string.UpdateToImportCX), true).show();
                                 }
                             } else {
                                 try {

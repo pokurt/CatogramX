@@ -53,6 +53,7 @@ public class UpdateAlertDialog extends BottomSheet {
         int colorText = Theme.getColor(Theme.key_windowBackgroundWhiteBlackText);
 
         FrameLayout frameLayout = new FrameLayout(activity);
+        /*
         BackupImageView backupImageView = new BackupImageView(parentActivity) {
             @SuppressLint("DrawAllocation")
             @Override
@@ -81,6 +82,7 @@ public class UpdateAlertDialog extends BottomSheet {
         backupImageView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
         backupImageView.setImage(update.banner, null, null);
         frameLayout.addView(backupImageView, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, 270));
+        */
 
         LinearLayout linearLayout = new LinearLayout(activity);
         linearLayout.setOrientation(LinearLayout.VERTICAL);

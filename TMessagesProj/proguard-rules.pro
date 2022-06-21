@@ -127,3 +127,6 @@
 -overloadaggressively
 -keepattributes SourceFile,LineNumberTable
 -renamesourcefileattribute SourceFile
+
+-dontoptimize
+-dontobfuscate

@@ -2993,7 +2993,7 @@ public class AndroidUtilities {
                 if (statusConf == OwlConfig.VALID_CONFIGURATION) {
                     new ImportSettingsDialog(parentFragment, message).checkCanShowDialog();
                 } else {
-                    BulletinFactory.of(parentFragment).createSimpleBulletin(R.raw.gigagroup_convert, LocaleController.getString("UpdateToImport", R.string.UpdateToImport), true).show();
+                    BulletinFactory.of(parentFragment).createSimpleBulletin(R.raw.gigagroup_convert, LocaleController.getString("UpdateToImportCX", R.string.UpdateToImportCX), true).show();
                 }
                 return;
             }

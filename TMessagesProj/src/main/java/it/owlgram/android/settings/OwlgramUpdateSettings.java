@@ -128,7 +128,7 @@ public class OwlgramUpdateSettings extends BaseFragment {
                     ((TextCheckCell) view).setChecked(OwlConfig.notifyUpdates);
                 }
             } else if (position == apkChannelRow) {
-                MessagesController.getInstance(currentAccount).openByUserName("OwlGramAPKs", this, 1);
+                MessagesController.getInstance(currentAccount).openByUserName("catoxbeta", this, 1);
             }
         });
         ApkDownloader.setDownloadListener(new ApkDownloader.UpdateListener() {
@@ -145,7 +145,8 @@ public class OwlgramUpdateSettings extends BaseFragment {
             @Override
             public void onFinished() {
                 if(updateCell != null) {
-                    changeBetaMode.setEnabled(!ApkDownloader.updateDownloaded(), null);
+                    if(changeBetaMode != null)
+                        changeBetaMode.setEnabled(!ApkDownloader.updateDownloaded(), null);
                     updateCheckCell.setCanCheckForUpdate(!ApkDownloader.updateDownloaded());
                     if(ApkDownloader.updateDownloaded()) {
                         updateCell.setInstallMode();
@@ -171,9 +172,9 @@ public class OwlgramUpdateSettings extends BaseFragment {
 
         updateSectionHeader = rowCount++;
         updateCheckRow = rowCount++;
-        if(!StoreUtils.isDownloadedFromAnyStore()){
-            betaUpdatesRow = rowCount++;
-        }
+        //if(!StoreUtils.isDownloadedFromAnyStore()){
+        //    betaUpdatesRow = rowCount++;
+        //}
         notifyWhenAvailableRow = rowCount++;
         apkChannelRow = rowCount++;
     }
@@ -249,7 +250,7 @@ public class OwlgramUpdateSettings extends BaseFragment {
                 case 6:
                     TextCell textCell = (TextCell) holder.itemView;
                     if (position == apkChannelRow) {
-                        textCell.setTextAndValue(LocaleController.getString("APKsChannel", R.string.APKsChannel), "@OwlGramAPKs", false);
+                        textCell.setTextAndValue(LocaleController.getString("APKsChannelCX", R.string.APKsChannelCX), "@catoxbeta", false);
                     }
                     break;
             }

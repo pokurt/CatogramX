@@ -68,12 +68,13 @@ dependencies {
 ext.abiCodes = ['universal':0, 'armeabi-v7a':1, 'arm64-v8a':5, x86:2, x86_64:6]
 
 //return an api key from a properties file.
-def getAppId(){
+static def getAppId(){
     Properties properties = new Properties()
     properties.load(new FileInputStream("./API_KEYS"))
     return properties.get("APP_ID")
 }
-def getAppHash(){
+
+static def getAppHash(){
     Properties properties = new Properties()
     properties.load(new FileInputStream("./API_KEYS"))
     return "\"" + properties.get("APP_HASH") + "\""
@@ -143,7 +144,7 @@ android {
         }
     }
 
-    defaultConfig.versionCode = 2656
+    defaultConfig.versionCode = 1
 
     applicationVariants.all { variant ->
         variant.outputs.all { output ->
@@ -158,7 +159,7 @@ android {
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 32
-        versionName "2.0.0"
+        versionName "5.0.0-PRERELEASE"
         buildConfigField "String", "GIT_COMMIT_HASH", "\"${getGitHash()}\""
         buildConfigField "Long", "GIT_COMMIT_DATE", "${getGitDate()}L"
 

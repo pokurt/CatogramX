@@ -55,7 +55,7 @@ public class OwlgramSettings extends BaseFragment {
     private int groupUpdatesRow;
     private int sourceCodeRow;
     private int supportTranslationRow;
-    private int supportDonationRow;
+    private int supportDonationRow = -1;
     private int bugReportRow;
 
     @Override
@@ -68,7 +68,7 @@ public class OwlgramSettings extends BaseFragment {
     @Override
     public View createView(Context context) {
         actionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        actionBar.setTitle(LocaleController.getString("OwlSetting", R.string.OwlSetting));
+        actionBar.setTitle(LocaleController.getString("OwlSettingCX", R.string.OwlSettingCX));
         actionBar.setAllowOverlayTitle(false);
         if (AndroidUtilities.isTablet()) {
             actionBar.setOccupyStatusBar(false);
@@ -83,7 +83,7 @@ public class OwlgramSettings extends BaseFragment {
                 } else if (id == 2) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
                     builder.setTitle(LocaleController.getString("ThemeResetToDefaultsTitle", R.string.ThemeResetToDefaultsTitle));
-                    builder.setMessage(LocaleController.getString("ResetSettingsAlert", R.string.ResetSettingsAlert));
+                    builder.setMessage(LocaleController.getString("ResetSettingsAlertCX", R.string.ResetSettingsAlertCX));
                     builder.setNegativeButton(LocaleController.getString("Cancel", R.string.Cancel), null);
                     builder.setPositiveButton(LocaleController.getString("ColorPickerReset", R.string.ColorPickerReset), (dialogInterface, i) -> {
                         int differenceUI = OwlConfig.getDifferenceUI();
@@ -126,13 +126,13 @@ public class OwlgramSettings extends BaseFragment {
         frameLayout.addView(listView, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, LayoutHelper.MATCH_PARENT));
         listView.setOnItemClickListener((view, position, x, y) -> {
             if (position == channelUpdatesRow) {
-                MessagesController.getInstance(currentAccount).openByUserName(LocaleController.getString("ChannelUsername", R.string.ChannelUsername), this, 1);
+                MessagesController.getInstance(currentAccount).openByUserName(LocaleController.getString("ChannelUsernameCX", R.string.ChannelUsernameCX), this, 1);
             } else if (position == groupUpdatesRow) {
-                MessagesController.getInstance(currentAccount).openByUserName(LocaleController.getString("GroupUsername", R.string.GroupUsername), this, 1);
+                MessagesController.getInstance(currentAccount).openByUserName(LocaleController.getString("GroupUsernameCX", R.string.GroupUsernameCX), this, 1);
             } else if (position == sourceCodeRow) {
-                Browser.openUrl(getParentActivity(), "https://github.com/OwlGramDev/OwlGram");
+                Browser.openUrl(getParentActivity(), "https://github.com/CatogramX/CatogramX");
             } else if (position == supportTranslationRow) {
-                Browser.openUrl(getParentActivity(), "https://translations.owlgram.org/");
+                Browser.openUrl(getParentActivity(), "https://translate.nift4.org/projects/catogram-x/");
             } else if (position == generalSettingsRow) {
                 presentFragment(new OwlgramGeneralSettings());
             } else if (position == chatSettingsRow) {
@@ -172,7 +172,7 @@ public class OwlgramSettings extends BaseFragment {
         groupUpdatesRow = rowCount++;
         sourceCodeRow = rowCount++;
         supportTranslationRow = rowCount++;
-        supportDonationRow = rowCount++;
+        //supportDonationRow = rowCount++;
         bugReportRow = rowCount++;
 
         if (listAdapter != null) {
@@ -217,9 +217,9 @@ public class OwlgramSettings extends BaseFragment {
                     } else if (position == updateSettingsRow){
                         textCell.setTextAndIcon(LocaleController.getString("OwlUpdates", R.string.OwlUpdates), R.drawable.round_update_white_28, false);
                     } else if (position == channelUpdatesRow) {
-                        textCell.setTextAndValueAndIcon(LocaleController.getString("OfficialChannel", R.string.OfficialChannel), "@" + LocaleController.getString("ChannelUsername", R.string.ChannelUsername), R.drawable.msg_channel, true);
+                        textCell.setTextAndValueAndIcon(LocaleController.getString("OfficialChannel", R.string.OfficialChannel), "@" + LocaleController.getString("ChannelUsernameCX", R.string.ChannelUsernameCX), R.drawable.msg_channel, true);
                     } else if (position == groupUpdatesRow) {
-                        textCell.setTextAndValueAndIcon(LocaleController.getString("OfficialGroup", R.string.OfficialGroup), "@" + LocaleController.getString("GroupUsername", R.string.GroupUsername), R.drawable.menu_groups, true);
+                        textCell.setTextAndValueAndIcon(LocaleController.getString("OfficialGroup", R.string.OfficialGroup), "@" + LocaleController.getString("GroupUsernameCX", R.string.GroupUsernameCX), R.drawable.menu_groups, true);
                     } else if (position == experimentalSettingsRow) {
                         textCell.setTextAndIcon(LocaleController.getString("Experimental", R.string.Experimental), R.drawable.outline_science_white, true);
                     } else if (position == appearanceSettingsRow) {
@@ -238,7 +238,7 @@ public class OwlgramSettings extends BaseFragment {
                     TextDetailSettingsCell textDetailCell = (TextDetailSettingsCell) holder.itemView;
                     textDetailCell.setMultilineDetail(true);
                     if (position == supportTranslationRow) {
-                        textDetailCell.setTextAndValueAndIcon(LocaleController.getString("TranslateOwl", R.string.TranslateOwl), LocaleController.getString("TranslateOwlDesc", R.string.TranslateOwlDesc), R.drawable.round_translate_white_28, true);
+                        textDetailCell.setTextAndValueAndIcon(LocaleController.getString("TranslateOwlCX", R.string.TranslateOwlCX), LocaleController.getString("TranslateOwlDescCX", R.string.TranslateOwlDescCX), R.drawable.round_translate_white_28, true);
                     }else if (position == supportDonationRow) {
                         textDetailCell.setTextAndValueAndIcon(LocaleController.getString("Donate", R.string.Donate), LocaleController.getString("DonateDesc", R.string.DonateDesc), R.drawable.round_favorite_border_white, true);
                     } else if (position == sourceCodeRow) {

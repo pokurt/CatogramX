@@ -427,7 +427,7 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
             addView(header, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT));
 
             TextSettingsCell cell = new TextSettingsCell(context);
-            cell.setText(LocaleController.getString("OwlSetting", R.string.OwlSetting), false);
+            cell.setText(LocaleController.getString("OwlSettingCX", R.string.OwlSettingCX), false);
             cell.setBackground(Theme.createSelectorWithBackgroundDrawable(Theme.getColor(Theme.key_windowBackgroundWhite), Theme.getColor(Theme.key_listSelector)));
             cell.setOnClickListener(e -> {
                 presentFragment(new OwlgramGeneralSettings());

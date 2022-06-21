@@ -23970,7 +23970,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 if (statusConf == OwlConfig.VALID_CONFIGURATION) {
                     new ImportSettingsDialog(ChatActivity.this, selectedObject).checkCanShowDialog();
                 } else {
-                    BulletinFactory.of(ChatActivity.this).createSimpleBulletin(R.raw.gigagroup_convert, LocaleController.getString("UpdateToImport", R.string.UpdateToImport), true).show();
+                    BulletinFactory.of(ChatActivity.this).createSimpleBulletin(R.raw.gigagroup_convert, LocaleController.getString("UpdateToImportCX", R.string.UpdateToImportCX), true).show();
                 }
                 break;
             }
@@ -26384,7 +26384,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                 if (statusConf == OwlConfig.VALID_CONFIGURATION) {
                                     new ImportSettingsDialog(ChatActivity.this, message).checkCanShowDialog();
                                 } else {
-                                    BulletinFactory.of(ChatActivity.this).createSimpleBulletin(R.raw.gigagroup_convert, LocaleController.getString("UpdateToImport", R.string.UpdateToImport), true).show();
+                                    BulletinFactory.of(ChatActivity.this).createSimpleBulletin(R.raw.gigagroup_convert, LocaleController.getString("UpdateToImportCX", R.string.UpdateToImportCX), true).show();
                                 }
                             } else {
                                 boolean handled = false;

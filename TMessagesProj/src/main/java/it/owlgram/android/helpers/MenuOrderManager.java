@@ -258,7 +258,7 @@ public class MenuOrderManager {
         list.add(
                 new EditableMenuItem(
                         list_items[6],
-                        LocaleController.getString("OwlSetting", R.string.OwlSetting),
+                        LocaleController.getString("OwlSettingCX", R.string.OwlSettingCX),
                         false
                 )
         );
